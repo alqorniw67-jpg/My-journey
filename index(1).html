@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>English Journey — 30 Days Challenge</title>
+<meta name="theme-color" content="#0f1b3d"><meta name="description" content="Pelacak belajar bahasa Inggris 30 hari">
+<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="icon-192.png">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);--bg:#f5f7fb;--card:#fff;--tx:#0f1b3d;--mu:#64708f;--bd:#e3e8f2;--ac:#2f6df6;--nv:#0f1b3d;--ok:#22c55e;--wr:#f5b50a;--gr:#d5dae6}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a1126;--card:#121b3a;--tx:#eaf0ff;--mu:#93a0c4;--bd:#243058;--nv:#2f6df6;--gr:#2b3558}}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
+main{max-width:980px;margin:0 auto;padding:16px}
+h1,h2,h3{margin:0 0 8px;letter-spacing:-.02em}h2{font-size:1.25rem}h3{font-size:1rem}p{margin:0 0 8px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:16px;box-shadow:0 2px 10px rgba(15,27,61,.06);margin-bottom:14px}
+.hero{background:linear-gradient(135deg,#0f1b3d,#2f6df6);color:#fff;border:0}
+.hero p{opacity:.9}.hero h1{font-size:1.9rem;line-height:1.15}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(2,1fr)}@media(min-width:720px){.grid{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}}
+.stat{padding:12px;border-radius:14px;background:var(--bg);border:1px solid var(--bd)}.stat b{display:block;font-size:1.4rem}.stat span{color:var(--mu);font-size:.8rem}
+.btn{border:0;border-radius:12px;padding:10px 14px;font:inherit;font-weight:600;cursor:pointer;background:var(--ac);color:#fff}
+.btn.s{background:var(--bg);color:var(--tx);border:1px solid var(--bd)}.btn.w{background:#fff;color:#0f1b3d}.btn.o{background:transparent;color:#fff;border:1px solid #fff8}
+.btn:disabled{opacity:.5;cursor:not-allowed}.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.bar{height:10px;border-radius:99px;background:var(--gr);overflow:hidden}.bar i{display:block;height:100%;background:var(--ok);transition:width .5s}
+.hero .bar{background:#fff3}
+nav{position:fixed;z-index:5;bottom:0;left:0;right:0;display:flex;background:var(--card);border-top:1px solid var(--bd);padding:4px 4px calc(4px + env(safe-area-inset-bottom,0px))}
+nav button{flex:1;border:0;background:none;color:var(--mu);font:inherit;font-size:.65rem;padding:6px 0;cursor:pointer;border-radius:10px}nav button b{display:block;font-size:1.2rem}nav button.on{color:var(--ac);font-weight:700}
+@media(min-width:720px){nav{position:sticky;top:0;bottom:auto;border:0;border-bottom:1px solid var(--bd);justify-content:center}nav button{flex:none;padding:8px 16px;font-size:.8rem}nav button b{display:inline;margin-right:4px}body{padding-bottom:20px}}
+input,textarea,select{width:100%;font:inherit;padding:10px;border-radius:10px;border:1px solid var(--bd);background:var(--bg);color:var(--tx);margin-bottom:8px}
+textarea{min-height:70px}label{font-size:.8rem;color:var(--mu)}
+.day{display:flex;gap:10px;align-items:center;padding:10px;border:1px solid var(--bd);border-radius:12px;margin-bottom:6px;cursor:pointer;background:var(--card)}
+.day .n{min-width:34px;height:34px;border-radius:10px;display:grid;place-items:center;font-weight:700;background:var(--gr);color:var(--tx)}
+.day.done .n{background:var(--ok);color:#fff}.day.part .n{background:var(--wr);color:#000}.day.lock{opacity:.5}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center}.cal div{padding:8px 0;border-radius:10px;background:var(--gr);font-size:.85rem;cursor:pointer;position:relative}
+.cal .h{background:none;color:var(--mu);font-size:.7rem;cursor:default}.cal .e{background:none;cursor:default}
+.cal .done{background:var(--ok);color:#fff}.cal .part{background:var(--wr);color:#000}.cal .td{outline:2px solid var(--ac)}.cal .at:after{content:"•";position:absolute;right:5px;top:-2px}
+.chk{display:flex;gap:10px;align-items:flex-start;padding:10px;border:1px solid var(--bd);border-radius:12px;margin-bottom:8px}
+.chk input{width:22px;height:22px;margin:2px 0 0}.chk.on{background:rgba(34,197,94,.1);border-color:var(--ok)}.chk .t{flex:1}
+.badge{display:inline-block;padding:2px 10px;border-radius:99px;font-size:.75rem;background:var(--bg);border:1px solid var(--bd)}
+.ach{display:flex;gap:12px;align-items:center}.ach.lk{opacity:.45;filter:grayscale(1)}.ach .i{font-size:2rem}
+.modal{position:fixed;inset:0;background:#0009;z-index:10;display:flex;align-items:flex-end;justify-content:center}
+.modal>div{background:var(--bg);width:100%;max-width:640px;max-height:92vh;overflow:auto;border-radius:22px 22px 0 0;padding:16px 16px calc(20px + env(safe-area-inset-bottom,0px))}
+@media(min-width:720px){.modal{align-items:center}.modal>div{border-radius:22px}}
+.pop{animation:pop .5s}@keyframes pop{0%{transform:scale(.8)}60%{transform:scale(1.08)}100%{transform:scale(1)}}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:90px;background:var(--nv);color:#fff;padding:10px 16px;border-radius:12px;z-index:20}
+.warn{background:rgba(245,181,10,.15);border-color:var(--wr)}.mu{color:var(--mu);font-size:.85rem}
+</style></head><body>
+<nav id="nav"></nav><main id="app"></main><div id="modal"></div>
+<script>
+const T=["Salam dan perkenalan diri","Kata ganti I, You, He, She, We, They","To be — am, is, are","Angka, umur, waktu, dan tanggal","Keluarga dan kegiatan sehari-hari","Menyusun dialog perkenalan","Review dan tes lisan","Simple present — I work, I study","Kata kerja umum — eat, go, want, need","Kalimat negatif dengan don't dan doesn't","Pertanyaan menggunakan do dan does","Hobi dan aktivitas harian","Percakapan tentang rutinitas","Review dan tes lisan","Bertanya dan memberi arah","Memesan makanan dan minuman","Belanja dan menanyakan harga","Meminta bantuan dan izin","Mengungkapkan keinginan dan kebutuhan","Small talk tentang cuaca, hobi, dan kabar","Simulasi percakapan sehari-hari","Simple past untuk cerita kemarin","Rencana masa depan dengan going to","Can, can't, should, dan must","Memahami pertanyaan dan meminta pengulangan","Telepon dan chat sederhana","Percakapan tentang pekerjaan dan pengalaman","Simulasi percakapan selama tiga menit","Review kosakata, grammar, dan topik sulit","Tes akhir: perkenalan dan dialog spontan"];
+const WK=["Minggu 1 — Dasar Percakapan","Minggu 2 — Kalimat Sehari-hari","Minggu 3 — Percakapan Praktis","Minggu 4 — Kelancaran Berbicara","Evaluasi Akhir"];
+const wk=d=>d>28?4:Math.floor((d-1)/7);
+const MOT=["Hari ini kamu tidak harus sempurna. Kamu hanya perlu lebih baik daripada kemarin.","Konsisten kecil mengalahkan semangat besar yang cepat padam.","Salah berbicara itu wajar. Setiap kesalahan adalah satu langkah belajar.","Satu jam hari ini adalah hadiah untuk dirimu di masa depan.","Jangan bandingkan bab pertamamu dengan bab ke-20 orang lain.","Bicara dulu, sempurnakan nanti. Keberanian lebih penting dari kesempurnaan.","Kamu sudah lebih jauh dari kemarin. Lanjutkan!"];
+const ACT=[["Materi baru","Baca dan pelajari materi baru dari buku utama (English Killer).",15],["Latihan soal","Kerjakan latihan soal dari English Booster.",10],["Penguatan materi","Perkuat materi dengan Otodidak Jago Kuasai Bahasa Inggris dari Nol.",10],["Latihan speaking","Ucapkan kalimat dan dialog dengan suara keras.",15],["Ulang kosakata","Ulangi kosakata dan materi yang sudah dipelajari.",10]];
+const ACH=[["🌱","First Step","Selesaikan hari pertama",s=>dn(s).length>=1],["🔥","3-Day Streak","Belajar 3 hari berturut-turut",s=>mx(s)>=3],["⚡","7-Day Streak","Belajar 7 hari berturut-turut",s=>mx(s)>=7],["🏔️","Halfway Hero","Selesaikan 15 hari",s=>dn(s).length>=15],["🏆","30-Day Finisher","Selesaikan semua 30 hari",s=>dn(s).length>=30]];
+const KEY="ej-v1";
+const def=()=>({start:null,done:{},checks:{},att:{},notes:[],dn:{},rem:{on:false,time:"19:00",last:""}});
+let S=def();try{const r=localStorage.getItem(KEY);if(r){const p=JSON.parse(r);if(valid(p))S=p}}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+function valid(p){try{const o=x=>x&&typeof x==="object"&&!Array.isArray(x),D=/^\d{4}-\d\d-\d\d$/;if(!o(p)||!o(p.done)||!o(p.checks)||!o(p.att)||!Array.isArray(p.notes)||!o(p.rem))return false;if(p.start!==null&&!D.test(p.start))return false;const ok=k=>/^\d+$/.test(k)&&k>=1&&k<=30;if(!Object.keys(p.done).every(ok)||!Object.keys(p.checks).every(ok))return false;if(!Object.values(p.checks).every(a=>Array.isArray(a)&&a.length===5))return false;if(!Object.values(p.done).every(x=>o(x)&&D.test(x.date)&&typeof x.at==="string"&&typeof x.min==="number"))return false;if(!Object.entries(p.att).every(([k,x])=>D.test(k)&&o(x)&&typeof x.time==="string"))return false;if(!p.notes.every(n=>o(n)&&typeof n.day==="number"&&typeof n.date==="string"))return false;if(p.dn&&!o(p.dn))return false;return typeof p.rem.time==="string"}catch(e){return false}}
+const pad=n=>String(n).padStart(2,"0");
+const iso=d=>d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate());
+const today=()=>iso(new Date());
+const dt=s=>{const [y,m,d]=s.split("-").map(Number);return new Date(y,m-1,d,12)};
+const diff=(a,b)=>Math.round((dt(a)-dt(b))/864e5);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const cur=()=>S.start?Math.min(30,Math.max(1,diff(today(),S.start)+1)):1;
+const dn=s=>Object.keys((s||S).done).map(Number);
+const dates=s=>new Set(Object.values(s.done).map(x=>x.date));
+function mx(s){const a=[...dates(s)].sort();let b=0,c=0,p=null;for(const d of a){c=p&&diff(d,p)===1?c+1:1;b=Math.max(b,c);p=d}return b}
+function streak(){const ds=dates(S);let d=today();if(!ds.has(d)){const y=dt(d);y.setDate(y.getDate()-1);d=iso(y)}let n=0;while(ds.has(d)){n++;const x=dt(d);x.setDate(x.getDate()-1);d=iso(x)}return n}
+const chk=d=>S.checks[d]||[0,0,0,0,0];
+function st(d){if(S.done[d])return"done";return chk(d).some(Boolean)?"part":"none"}
+const stTxt={none:"Belum Mulai",part:"Sedang Belajar",done:"Selesai"};
+const mins=()=>Object.values(S.done).reduce((a,x)=>a+x.min,0);
+const vocab=()=>S.notes.filter(n=>n.word).length;
+let page="home",cm=new Date(),sel=null,tm={d:0,i:-1,left:0,run:false,h:null};
+function toast(t){const e=document.createElement("div");e.className="toast";e.textContent=t;document.body.append(e);setTimeout(()=>e.remove(),2500)}
+const NAV=[["home","🏠","Dashboard"],["plan","📚","Jadwal"],["att","✅","Absensi"],["cal","📅","Kalender"],["notes","📝","Catatan"],["ach","🏅","Pencapaian"],["set","⚙️","Atur"]];
+function go(p){page=p;render();scrollTo(0,0)}
+function ring(){const p=Math.round(dn().length/30*100);return p}
+function dayRow(d){const s=st(d),lock=d>cur();return `<div class="day ${s} ${lock?"lock":""}" data-a="open" data-d="${d}"><div class="n">${s==="done"?"✓":d}</div><div style="flex:1"><b>Hari ${d}</b><div class="mu">${esc(T[d-1])}</div></div><span class="badge">${lock?"🔒 Terkunci":stTxt[s]}</span></div>`}
+function render(){
+ document.getElementById("nav").innerHTML=NAV.map(n=>`<button class="${page===n[0]?"on":""}" data-a="go" data-p="${n[0]}"><b>${n[1]}</b>${n[2]}</button>`).join("");
+ const A=document.getElementById("app"),c=cur(),p=ring(),ta=S.att[today()];
+ const hs=S.done[c]?"done":st(c);
+ if(page==="home")A.innerHTML=`
+ <div class="card hero"><span class="badge" style="color:#fff;background:#fff2;border-color:#fff3">English Journey — 30 Days Challenge</span>
+ <h1 style="margin-top:10px">30 Hari Menuju English Confidence</h1><p>Sedikit belajar setiap hari. Lebih percaya diri berbicara bahasa Inggris setiap minggu.</p>
+ <div class="row" style="margin-bottom:12px"><span class="badge" style="background:#fff2;color:#fff;border-color:#fff3">🎯 30 hari</span><span class="badge" style="background:#fff2;color:#fff;border-color:#fff3">📖 3 buku</span><span class="badge" style="background:#fff2;color:#fff;border-color:#fff3">⏱️ 60 menit/hari</span></div>
+ <div class="bar"><i style="width:${p}%"></i></div><p class="mu" style="color:#fffc;margin-top:6px">${dn().length}/30 hari selesai (${p}%)</p>
+ <div class="row"><button class="btn w" data-a="start">Mulai Belajar Hari Ini</button><button class="btn o" data-a="go" data-p="plan">Lihat Jadwal Belajar</button></div></div>
+ <div class="card"><h3>💬 Motivasi Hari ${c}</h3><p>${MOT[(c-1)%MOT.length]}</p></div>
+ <div class="grid g4"><div class="stat"><b>${dn().length}/30</b><span>Hari selesai</span></div><div class="stat"><b>${p}%</b><span>Progres</span></div><div class="stat"><b>${mins()}</b><span>Total menit</span></div><div class="stat"><b>🔥 ${streak()}</b><span>Streak hari</span></div><div class="stat"><b>${vocab()}</b><span>Kosakata</span></div><div class="stat"><b style="font-size:1rem">${stTxt[hs]}</b><span>Status hari ${c}</span></div></div>
+ <div class="card" style="margin-top:14px"><h3>Hari ${c}: ${esc(T[c-1])}</h3><div class="row"><button class="btn" data-a="start">▶ Mulai Sesi Belajar</button><button class="btn s" data-a="go" data-p="att">${ta?"✔ Sudah absen":"Absen Hari Ini"}</button><button class="btn s" data-a="go" data-p="cal">Lihat Kalender</button><button class="btn s" data-a="go" data-p="ach">Lihat Progres</button></div></div>
+ ${ta?"":`<div class="card warn">⏰ Kamu belum absen hari ini. Selesai belajar? Tekan tombol absen di halaman Absensi.</div>`}`;
+ if(page==="plan")A.innerHTML=`<h2>Jadwal 30 Hari</h2>`+[0,1,2,3,4].map(w=>`<h3 style="margin-top:14px">${WK[w]}</h3>`+T.map((_,i)=>i+1).filter(d=>wk(d)===w).map(dayRow).join("")).join("");
+ if(page==="att"){const h=Object.entries(S.att).sort().reverse();A.innerHTML=`<h2>Absensi Harian</h2><div class="card"><p class="mu">${new Date().toLocaleDateString("id-ID",{dateStyle:"full"})}</p>${ta?`<p>✅ <b>Absensi hari ini berhasil dicatat</b></p><p class="mu">Pukul ${esc(ta.time)}${ta.note?" — "+esc(ta.note):""}</p>`:`<p>⏰ Belum absen. Tekan tombol hanya jika kamu benar-benar sudah belajar.</p><label>Catatan belajar (opsional)</label><textarea id="an"></textarea><button class="btn" data-a="absen">Absen Belajar Hari Ini</button>`}</div><h3>Riwayat</h3>${h.length?h.map(([d,x])=>`<div class="card"><b>${d}</b> • ${esc(x.time)} <span class="badge">Hadir</span>${x.note?`<p class="mu">${esc(x.note)}</p>`:""}</div>`).join(""):`<p class="mu">Belum ada riwayat.</p>`}`}
+ if(page==="cal"){const y=cm.getFullYear(),m=cm.getMonth(),f=new Date(y,m,1).getDay(),n=new Date(y,m+1,0).getDate();let h=["M","S","S","R","K","J","S"].map(x=>`<div class="h">${x}</div>`).join("")+`<div class="e"></div>`.repeat(f);
+ for(let i=1;i<=n;i++){const k=y+"-"+pad(m+1)+"-"+pad(i),d=S.start?diff(k,S.start)+1:0,ok=d>=1&&d<=30;h+=`<div data-a="cald" data-k="${k}" class="${ok?st(d):""} ${k===today()?"td":""} ${S.att[k]?"at":""}">${i}</div>`}
+ A.innerHTML=`<h2>Kalender</h2><div class="card"><div class="row" style="justify-content:space-between;margin-bottom:10px"><button class="btn s" data-a="cm" data-v="-1">‹</button><b>${cm.toLocaleDateString("id-ID",{month:"long",year:"numeric"})}</b><button class="btn s" data-a="cm" data-v="1">›</button></div><div class="cal">${h}</div><p class="mu" style="margin-top:10px">🟩 selesai • 🟨 sebagian • ⬜ belum • • hadir. ${S.start?"":"Tekan “Mulai Belajar Hari Ini” untuk menetapkan tanggal mulai."}</p></div><div id="cd"></div>`}
+ if(page==="notes")A.innerHTML=`<h2>Catatan Belajar</h2><div class="card"><label>Kosakata baru</label><input id="nw"><label>Arti (Indonesia)</label><input id="nm"><label>Contoh kalimat</label><input id="ne"><label>Terjemahan kalimat</label><input id="nt"><label>Catatan grammar</label><textarea id="ng"></textarea><label>Kesulitan yang ditemukan</label><textarea id="nd"></textarea><label>Target sesi berikutnya</label><input id="nx"><button class="btn" data-a="addnote">Simpan Catatan (Hari ${c})</button></div>${[...S.notes].reverse().map((n,i)=>`<div class="card"><span class="badge">Hari ${n.day} • ${n.date}</span> <button class="btn s" style="float:right;padding:4px 10px" data-a="delnote" data-i="${S.notes.length-1-i}">🗑</button>${n.word?`<p><b>${esc(n.word)}</b> = ${esc(n.mean)}</p>`:""}${n.ex?`<p><i>${esc(n.ex)}</i><br><span class="mu">${esc(n.tr)}</span></p>`:""}${n.gr?`<p>📐 ${esc(n.gr)}</p>`:""}${n.hard?`<p>😓 ${esc(n.hard)}</p>`:""}${n.next?`<p>🎯 ${esc(n.next)}</p>`:""}</div>`).join("")}`;
+ if(page==="ach")A.innerHTML=`<h2>Pencapaian</h2>`+ACH.map(a=>{const u=a[3](S);return `<div class="card ach ${u?"":"lk"}"><div class="i">${u?a[0]:"🔒"}</div><div><b>${a[1]}</b><div class="mu">${a[2]} — ${u?"Terbuka":"Terkunci"}</div></div></div>`}).join("")+`<p class="mu">Streak terpanjang: ${mx(S)} hari (dihitung dari tanggal kalender lokal).</p>`;
+ if(page==="set"){const r=S.rem;A.innerHTML=`<h2>Pengaturan</h2><div class="card"><h3>⏰ Pengingat</h3><label>Waktu belajar harian</label><input type="time" id="rt" value="${r.time}"><div class="row"><button class="btn ${r.on?"":"s"}" data-a="remtog">${r.on?"Pengingat AKTIF — ketuk untuk nonaktif":"Aktifkan Pengingat"}</button><a class="btn s" style="text-decoration:none" target="_blank" rel="noopener" href="${gcal()}">Atur di Google Calendar</a><button class="btn s" data-a="ics">⬇ Unduh .ics</button></div><p class="mu" style="margin-top:8px">Notifikasi browser hanya muncul saat website ini masih terbuka (tab/aplikasi aktif). Jika ditutup, tergantung browser dan perangkat, notifikasi bisa tidak berjalan karena tidak ada server penjadwal. Untuk pengingat andal, gunakan tombol Google Calendar atau alarm ponsel.</p></div>
+ <div class="card"><h3>💾 Data</h3><p class="mu">Data disimpan di localStorage browser ini. Tidak otomatis sinkron antarperangkat dan bisa hilang jika data browser dihapus — ekspor secara berkala.</p><div class="row"><button class="btn s" data-a="dl">⬇ Unduh JSON</button><button class="btn s" data-a="exp">Tampilkan JSON</button><button class="btn s" data-a="imp">Impor dari teks</button><label class="btn s" style="margin:0">Pilih file JSON<input type="file" id="fi" accept=".json" hidden></label><button class="btn s" style="color:#e11d48" data-a="reset">Reset Progres</button></div><textarea id="jd" placeholder="Hasil ekspor / tempel JSON di sini lalu tekan Impor" style="margin-top:10px;min-height:120px"></textarea><button class="btn s" data-a="copy">Salin</button></div>`;
+ const fi=document.getElementById("fi");if(fi)fi.onchange=e=>{const f=e.target.files[0];if(f)f.text().then(t=>doImport(t))}}
+}
+function gcal(){const d=today().replace(/-/g,""),t=S.rem.time.replace(":","")+"00";return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent("Belajar English 60 menit")}&dates=${d}T${t}/${d}T${t}&recur=RRULE:FREQ=DAILY;COUNT=30`}
+function doImport(t){try{const p=JSON.parse(t);if(!valid(p))throw 0;S=Object.assign(def(),p);S.dn=S.dn||{};save();render();toast("Data berhasil diimpor")}catch(e){toast("File tidak valid, data tidak diubah")}}
+function modal(d){
+ const open=d<=cur(),c=chk(d),all=c.every(Boolean),dd=S.done[d],ed=open&&!dd,w=WK[wk(d)];
+ const body=`<div class="row" style="justify-content:space-between"><h2>Hari ${d}: ${esc(T[d-1])}</h2><button class="btn s" data-a="close">✕</button></div><span class="badge">${w}</span>
+ <div class="card" style="margin-top:10px"><h3>🎯 Tujuan</h3><p>Setelah hari ini, kamu mampu berbicara tentang “${esc(T[d-1])}” dengan kalimat sederhana yang jelas.</p><h3>📖 Materi utama</h3><p>${esc(T[d-1])}. Catat 5 kosakata/pola kalimat baru.</p><h3>🗣️ Latihan speaking</h3><p>Ucapkan 5 kalimat dan satu dialog 6 baris tentang: ${esc(T[d-1])}. Rekam suaramu dan dengarkan kembali.</p></div>
+ ${!open?`<p class="card warn">🔒 Hari ini belum terbuka. Selesaikan sesuai jadwal.</p>`:""}
+ <h3>Checklist 60 menit</h3>${ACT.map((a,i)=>`<div class="chk ${c[i]?"on":""}"><input type="checkbox" data-a="tick" data-d="${d}" data-i="${i}" ${c[i]?"checked":""} ${ed?"":"disabled"}><div class="t"><b>${a[0]}</b> <span class="badge">${a[2]} mnt</span><div class="mu">${a[1]}</div>${ed?`<button class="btn s" style="margin-top:6px;padding:4px 10px" data-a="timer" data-d="${d}" data-i="${i}">⏱ Mulai timer</button>`:""}</div></div>`).join("")}
+ ${ed?`<div class="card"><b id="tml">${tm.i>=0&&tm.d===d?tmTxt():"Timer belum berjalan"}</b><div class="row" style="margin-top:6px"><button class="btn s" data-a="tpause">⏸ Jeda</button><button class="btn s" data-a="tresume">▶ Lanjutkan</button><button class="btn s" data-a="treset">↺ Reset</button></div></div>`:""}
+ <label>Catatan pribadi</label><textarea id="pn" data-d="${d}" ${open?"":"disabled"}>${esc(S.dn[d]||"")}</textarea>
+ ${dd?`<div class="card pop"><h3>🎉 Selesai!</h3><p>Diselesaikan ${esc(dd.date)} pukul ${esc(dd.at)} • ${dd.min} menit</p><p class="mu">${ACT.map(a=>"✓ "+a[0]).join(" • ")}</p></div>`:ed?`<button class="btn" style="width:100%" data-a="finish" data-d="${d}" ${all?"":"disabled"}>${all?"Selesaikan Belajar Hari Ini":"Centang semua aktivitas untuk menyelesaikan"}</button>`:""}`;
+ sel=d;document.getElementById("modal").innerHTML=`<div class="modal" data-a="bg"><div>${body}</div></div>`}
+const tmTxt=()=>`${ACT[tm.i][0]} — ${pad(Math.floor(tm.left/60))}:${pad(tm.left%60)}${tm.run?"":" (jeda)"}`;
+function tick(){if(!tm.run)return;tm.left--;const e=document.getElementById("tml");if(tm.left<=0){tm.run=false;clearInterval(tm.h);if(e)e.textContent="⏰ Waktu habis! Centang jika sudah selesai.";toast("Waktu habis!");return}if(e)e.textContent=tmTxt()}
+function remCheck(){const r=S.rem;if(!r.on)return;const n=new Date(),hm=pad(n.getHours())+":"+pad(n.getMinutes());if(hm>=r.time&&r.last!==today()&&!S.done[cur()]){r.last=today();save();const m="Waktunya belajar English hari ini! Sesi hari "+cur()+" belum selesai.";toast(m);try{if(Notification.permission==="granted")new Notification("English Journey",{body:m})}catch(e){}}}
+setInterval(remCheck,30000);
+document.addEventListener("click",async e=>{
+ const t=e.target.closest("[data-a]");if(!t)return;const a=t.dataset.a,d=+t.dataset.d;
+ if(a==="bg"){if(e.target===t)a0()}
+ else if(a==="close")a0();
+ else if(a==="go"){a0();go(t.dataset.p)}
+ else if(a==="start"){if(!S.start){S.start=today();save()}render();modal(cur())}
+ else if(a==="open"){modal(d)}
+ else if(a==="tick"){const c=chk(d).slice();c[+t.dataset.i]=t.checked?1:0;S.checks[d]=c;save();modal(d);render()}
+ else if(a==="finish"){const c=chk(d);if(!c.every(Boolean)||S.done[d])return;if(!S.start)S.start=today();const n=new Date();S.done[d]={date:today(),at:pad(n.getHours())+":"+pad(n.getMinutes()),min:60};save();modal(d);render();toast("🎉 Hebat! Hari "+d+" selesai")}
+ else if(a==="timer"){clearInterval(tm.h);tm={d,i:+t.dataset.i,left:ACT[+t.dataset.i][2]*60,run:true,h:setInterval(tick,1000)};document.getElementById("tml").textContent=tmTxt()}
+ else if(a==="tpause"){tm.run=false;if(tm.i>=0)document.getElementById("tml").textContent=tmTxt()}
+ else if(a==="tresume"){if(tm.i>=0&&tm.left>0){tm.run=true;clearInterval(tm.h);tm.h=setInterval(tick,1000)}}
+ else if(a==="treset"){if(tm.i>=0){tm.left=ACT[tm.i][2]*60;tm.run=false;document.getElementById("tml").textContent=tmTxt()}}
+ else if(a==="absen"){const n=new Date();S.att[today()]={time:pad(n.getHours())+":"+pad(n.getMinutes()),note:document.getElementById("an").value.trim()};save();render()}
+ else if(a==="cm"){cm=new Date(cm.getFullYear(),cm.getMonth()+ +t.dataset.v,1);render()}
+ else if(a==="cald"){const k=t.dataset.k,dd=S.start?diff(k,S.start)+1:0,x=S.att[k];document.getElementById("cd").innerHTML=`<div class="card"><b>${k}</b><p class="mu">${x?"Hadir pukul "+esc(x.time):"Tidak ada absensi"}</p>${dd>=1&&dd<=30?dayRow(dd):`<p class="mu">Tidak ada jadwal belajar pada tanggal ini.</p>`}</div>`}
+ else if(a==="addnote"){const g=i=>document.getElementById(i).value.trim(),n={day:cur(),date:today(),word:g("nw"),mean:g("nm"),ex:g("ne"),tr:g("nt"),gr:g("ng"),hard:g("nd"),next:g("nx")};if(!n.word&&!n.ex&&!n.gr&&!n.hard&&!n.next)return toast("Isi minimal satu kolom");S.notes.push(n);save();render();toast("Catatan tersimpan")}
+ else if(a==="delnote"){S.notes.splice(+t.dataset.i,1);save();render()}
+ else if(a==="remtog"){S.rem.time=document.getElementById("rt").value||"19:00";if(!S.rem.on){if("Notification" in window&&Notification.permission==="default"){if(confirm("Izinkan notifikasi browser? Notifikasi hanya muncul saat website ini masih terbuka."))await Notification.requestPermission()}S.rem.on=true;toast(("Notification" in window&&Notification.permission==="granted")?"Pengingat aktif":"Notifikasi tidak tersedia; pengingat tampil di dalam halaman")}else S.rem.on=false;save();render()}
+ else if(a==="dl"){dl("english-journey-"+today()+".json",JSON.stringify(S,null,1),"application/json")}
+ else if(a==="ics"){const t=(document.getElementById("rt").value||S.rem.time).replace(":","")+"00",d=today().replace(/-/g,"");dl("english-journey.ics",["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//English Journey//ID","BEGIN:VEVENT","UID:ej-"+d+"@english-journey","DTSTAMP:"+d+"T000000","DTSTART:"+d+"T"+t,"DURATION:PT1H","RRULE:FREQ=DAILY;COUNT=30","SUMMARY:Belajar English 60 menit","BEGIN:VALARM","TRIGGER:PT0M","ACTION:DISPLAY","DESCRIPTION:Waktunya belajar English!","END:VALARM","END:VEVENT","END:VCALENDAR"].join("\r\n"),"text/calendar")}
+ else if(a==="exp"){document.getElementById("jd").value=JSON.stringify(S,null,1)}
+ else if(a==="copy"){const v=document.getElementById("jd");v.select();try{await navigator.clipboard.writeText(v.value);toast("Tersalin")}catch(x){toast("Salin manual dari kotak teks")}}
+ else if(a==="imp"){const v=document.getElementById("jd").value;if(!v.trim())return toast("Tempel JSON dulu");doImport(v)}
+ else if(a==="reset"){if(confirm("Reset SEMUA progres, absensi, dan catatan? Tindakan ini tidak bisa dibatalkan.")){S=def();save();render();toast("Progres direset")}}
+});
+function dl(n,c,m){const u=URL.createObjectURL(new Blob([c],{type:m})),a=document.createElement("a");a.href=u;a.download=n;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),1000)}
+function a0(){document.getElementById("modal").innerHTML="";sel=null;clearInterval(tm.h);tm.run=false;tm.i=-1}
+document.addEventListener("input",e=>{if(e.target.id==="pn"){S.dn[e.target.dataset.d]=e.target.value;save()}});
+document.addEventListener("change",e=>{if(e.target.id==="rt"){S.rem.time=e.target.value||"19:00";save()}});
+render();
+if("serviceWorker" in navigator&&location.protocol.startsWith("http"))addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));
+</script></body></html>
